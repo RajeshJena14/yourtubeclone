@@ -7,6 +7,7 @@ import videoroutes from './Routes/video.js'
 import userroutes from "./Routes/User.js"
 import path from 'path'
 import commentroutes from './Routes/comment.js'
+import http from 'http'
 import { Server } from 'socket.io'
 
 dotenv.config()
@@ -32,9 +33,9 @@ app.use('/comment', commentroutes)
 const PORT = process.env.PORT
 
 
-app.listen(PORT, () => {
-	console.log(`Server running on Port ${PORT}`)
-})
+// app.listen(PORT, () => {
+// 	console.log(`Server running on Port ${PORT}`)
+// })
 const DB_URL = process.env.CONNECTION_URL
 mongoose.connect(DB_URL).then(() => {
 	console.log("Mongodb Database connected")
@@ -42,7 +43,9 @@ mongoose.connect(DB_URL).then(() => {
 	console.log(error)
 })
 
-const io = new Server(2000, {
+const server = http.createServer(app)
+
+const io = new Server(server, {
 	cors: {
 		origin: "*",
 		methods: ["GET", "POST"]
@@ -74,3 +77,7 @@ io.on("connection", (socket) => {
 		io.to(data.to).emit("screenAccepted", data.signal)
 	});
 });
+
+server.listen(PORT, () => {
+	console.log(`Server running on Port ${PORT}`)
+})
