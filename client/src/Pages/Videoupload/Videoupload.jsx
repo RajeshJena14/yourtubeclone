@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Videoupload.css'
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar"
 import { useSelector, useDispatch } from 'react-redux'
-import { uploadvideo } from '../../action/video'
+import { uploadvideo } from '../../action/video.js'
 const Videoupload = ({ setvideouploadpage }) => {
     const [title, settitle] = useState("")
     const [videofile, setvideofile] = useState("")
@@ -36,7 +36,7 @@ const Videoupload = ({ setvideouploadpage }) => {
             filedata.append("title", title)
             filedata.append("chanel", currentuser?.result?._id)
             filedata.append("uploader", currentuser?.result.name)
-            // console.log(videofile)
+
             dispatch(uploadvideo({ filedata: filedata, fileoption: fileoption }))
         }
     }

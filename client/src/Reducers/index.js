@@ -1,12 +1,12 @@
-import {combineReducers} from "redux";
-import authreducer from "./auth";
-import currentuserreducer from "./currentuser";
-import chanelreducer from "./chanel";
-import videoreducer from "./video";
-import commentreducer from "./comment";
-import historyreducer from "./history";
-import likedvideoreducer from "./likedvideo";
-import watchlaterreducer from "./watchlater";
+import { combineReducers } from "redux";
+import authreducer from "./auth.js";
+import currentuserreducer from "./currentuser.js";
+import chanelreducer from "./chanel.js";
+import videoreducer from "./video.js";
+import commentreducer from "./comment.js";
+import historyreducer from "./history.js";
+import likedvideoreducer from "./likedvideo.js";
+import watchlaterreducer from "./watchlater.js";
 export default combineReducers({
     authreducer,
     currentuserreducer,

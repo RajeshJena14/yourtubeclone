@@ -1,9 +1,9 @@
-const likedvideoreducer=(state={data:null},action)=>{
+const likedvideoreducer = (state = { data: null }, action) => {
     switch (action.type) {
         case "POST_LIKEDVIDEO":
-            return{...state,data:action?.data}
+            return { ...state, data: action?.data }
         case "FETCH_ALL_LIKED_VIDEOS":
-            return{...state,data:action?.payload}
+            return { ...state, data: action?.payload }
         default:
             return state
     }

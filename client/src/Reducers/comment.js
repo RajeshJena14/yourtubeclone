@@ -1,11 +1,11 @@
-const commentreducer=(state={data:null},action)=>{
+const commentreducer = (state = { data: null }, action) => {
     switch (action.type) {
         case "POST_COMMENT":
-          return {...state};
+            return { ...state };
         case "EDIT_COMMENT":
-            return {...state};
+            return { ...state };
         case "FETCH_ALL_COMMENTS":
-            return {...state,data:action.payload}
+            return { ...state, data: action.payload }
         default:
             return state;
     }

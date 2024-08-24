@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: pink;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 code {
@@ -12,11 +16,12 @@ code {
     monospace;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0.5rem;
   height: 0.5rem;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
   background-color: grey;
   border-radius: 5rem;
 }

@@ -1,7 +1,7 @@
-import watchlater from "../Models/watchlater.js";
+import watchlater from "../Models/watchlater.js"
 
 export const watchlatercontroller = async (req, res) => {
-    const watchlaterdata = req.body;
+    const watchlaterdata = req.body
     const addtowatchlater = new watchlater(watchlaterdata)
     try {
         await addtowatchlater.save()
@@ -24,9 +24,9 @@ export const deletewatchlater = async (req, res) => {
     const { videoid: videoid, viewer: viewer } = req.params
     try {
         await watchlater.findOneAndDelete({
-            videoid:videoid,viewer:viewer,
+            videoid: videoid, viewer: viewer,
         })
-        res.status(200).json({message:"removed from watch later"})
+        res.status(200).json({ message: "removed from watch later" })
     } catch (error) {
         res.status(400).json(error.message)
         return

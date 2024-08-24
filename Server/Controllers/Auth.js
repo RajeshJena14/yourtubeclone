@@ -1,16 +1,18 @@
 import users from "../Models/Auth.js"
 import jwt from "jsonwebtoken"
+let privateKey = "youtubeclone"
+
 export const login = async (req, res) => {
-    const { email } = req.body;
+    const { email } = req.body
     // console.log(email)
     try {
         const extinguser = await users.findOne({ email })
         if (!extinguser) {
             try {
-                const newuser = await users.create({ email });
+                const newuser = await users.create({ email })
                 const token = jwt.sign({
                     email: newuser.email, id: newuser._id
-                }, process.env.JWT_SECERT, {
+                }, privateKey, {
                     expiresIn: "1h"
                 }
                 )
@@ -22,15 +24,16 @@ export const login = async (req, res) => {
 
         } else {
             const token = jwt.sign({
-                email: extinguser.email, id: extinguser._id
-            }, process.env.JWT_SECERT, {
+                email: extinguser.email, id: extinguser._id,
+            }, privateKey, {
                 expiresIn: "1h"
             }
             )
-            res.status(200).json({ result: extinguser ,token})
+            res.status(200).json({ result: extinguser, token })
         }
     } catch (error) {
-        res.status(500).json({ mess: "something went wrong..." })
+        console.log(error)
+        // res.status(500).json({ mess: "something went wrong..." })
         return
     }
 }
