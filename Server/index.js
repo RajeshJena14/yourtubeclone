@@ -36,8 +36,8 @@ const PORT = process.env.PORT
 // app.listen(PORT, () => {
 // 	console.log(`Server running on Port ${PORT}`)
 // })
-const DB_URL = process.env.CONNECTION_URL
-mongoose.connect(DB_URL).then(() => {
+
+mongoose.connect("mongodb://localhost:27017/yourtube").then(() => {
 	console.log("Mongodb Database connected")
 }).catch((error) => {
 	console.log(error)
