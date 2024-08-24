@@ -32,12 +32,7 @@ app.use('/comment', commentroutes)
 
 const PORT = process.env.PORT
 
-
-// app.listen(PORT, () => {
-// 	console.log(`Server running on Port ${PORT}`)
-// })
-
-mongoose.connect("mongodb://localhost:27017/yourtube").then(() => {
+mongoose.connect("mongodb+srv://rkjrajesh2004:Rajesh123@cluster0.dszppoa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(() => {
 	console.log("Mongodb Database connected")
 }).catch((error) => {
 	console.log(error)
