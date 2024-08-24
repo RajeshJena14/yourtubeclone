@@ -38,7 +38,7 @@ const PORT = process.env.PORT
 // 	console.log(error)
 // })
 
-const uri = "mongodb+srv://rkjrajesh2004:#Rajesh123@cluster0.dszppoa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://rkjrajesh2004:RajeshJena14@cluster0.dszppoa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
 async function run() {
   try {
