@@ -6,7 +6,7 @@ const Showvideo = ({ vids }) => {
   return (
     <>
       <Link to={`/videopage/${vids?._id}`}>
-        <video src={`http://localhost:5000/${vids?.filepath}`} className='video_ShowVideo' />
+        <video src={`https://yourtubeclone-1.onrender.com/${vids?.filepath}`} className='video_ShowVideo' />
       </Link>
       <div className="video_description">
         <div className="Chanel_logo_App">

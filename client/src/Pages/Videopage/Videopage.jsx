@@ -129,7 +129,7 @@ const Videopage = ({ setUsp, setcloseApp }) => {
             <div className="container_videoPage" id='container'>
                 <div className="container2_videoPage">
                     <div className="video_display_screen_videoPage">
-                        <video src={`http://localhost:5000/${vv?.filepath}`} className="video_ShowVideo_videoPage" id='myvideo' controls>
+                        <video src={`https://yourtubeclone-1.onrender.com/${vv?.filepath}`} className="video_ShowVideo_videoPage" id='myvideo' controls>
                         </video>
                         <div className="control_box" id='user_control'></div>
                         <div className="video_details_videoPage">
