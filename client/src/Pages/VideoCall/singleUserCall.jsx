@@ -10,8 +10,8 @@ import ScreenVideo from '../../Component/Stream/ScreenVideo.jsx';
 window.process = process
 
 const SingleUserCall = () => {
-  const d = new Date()
-  if (d.getHours() >= 18 && d.getHours() < 24) {
+  // const d = new Date()
+  // if (d.getHours() >= 18 && d.getHours() < 24) {
     const [mute, setMute] = useState(false)
     return (
       <ContextProvider>
@@ -29,10 +29,10 @@ const SingleUserCall = () => {
         <MicCamera setMute={setMute} />
       </ContextProvider>
     )
-  }
-  else {
-    return <h1 style={{ textAlign: "center" }}>AVAILABLE BETWEEN 6PM & 12AM</h1>
-  }
+  // }
+  // else {
+  //   return <h1 style={{ textAlign: "center" }}>AVAILABLE BETWEEN 6PM & 12AM</h1>
+  // }
 }
 
 export default SingleUserCall
