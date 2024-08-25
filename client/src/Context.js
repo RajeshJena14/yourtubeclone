@@ -1,12 +1,15 @@
 import React, { createContext, useState, useRef, useEffect } from 'react'
 import { io } from 'socket.io-client'
 import Peer from 'simple-peer'
+import {useNavigate} from 'react-router-dom'
 
 const SocketContext = createContext()
 
 const socket = io('https://yourtubeclone-1.onrender.com')
 
 const ContextProvider = ({ children }) => {
+    let navigate = useNavigate()
+    
     const [callAccepted, setCallAccepted] = useState(false)
     const [callEnded, setCallEnded] = useState(false)
     const [stream, setStream] = useState()
@@ -115,7 +118,7 @@ const ContextProvider = ({ children }) => {
     const leaveCall = () => {
         setCallEnded(true)
         connectionRef.current.destroy()
-        window.location.reload()
+        navigate(`/`)
     }
 
     const shareScreen = (currstream, id) => {
