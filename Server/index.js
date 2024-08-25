@@ -31,8 +31,9 @@ app.use('/video', videoroutes)
 app.use('/comment', commentroutes)
 
 const PORT = process.env.PORT
+const DB_URL = process.env.CONNECTION_URL
 
-mongoose.connect("mongodb+srv://admin:admin@your-tube.8m88p.mongodb.net/?retryWrites=true&w=majority&appName=Your-tube").then(() => {
+mongoose.connect(DB_URL).then(() => {
 	console.log("Mongodb Database connected")
 }).catch((error) => {
 	console.log(error)
